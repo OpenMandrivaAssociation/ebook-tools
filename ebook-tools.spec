@@ -4,7 +4,7 @@ Version:        0.1.0
 Release:        %mkrel 1
 Url:            http://sourceforge.net/projects/ebook-tools
 License:        MIT
-Group:          TODO
+Group:          Publishing
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source0:        %{name}-%{version}.tar.gz
 Patch0:         ebook-tools-0.1.0-fix-lib.patch
@@ -21,6 +21,7 @@ Tools for accessing and converting various ebook file formats
 %package devel
 Summary: Devel stuff for %name
 Group: Development/KDE and Qt
+Requires:  %libepub = %version-%release
 
 %description  devel
 This package contains header files needed if you wish to build applications
