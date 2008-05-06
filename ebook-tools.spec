@@ -17,21 +17,6 @@ Tools for accessing and converting various ebook file formats
 %{_bindir}/einfo
 %{_bindir}/lit2epub
 
-#--------------------------------------------------------------------
-%package devel
-Summary: Devel stuff for %name
-Group: Development/KDE and Qt
-Requires:  %libepub = %version-%release
-
-%description  devel
-This package contains header files needed if you wish to build applications
-based on %name
-
-%files devel
-%defattr(-,root,root)
-%{_includedir}/*.h
-%{_libdir}/libepub.so
-
 #-----------------------------------------------------------------------------
 
 %define libepub_major 0
@@ -52,7 +37,21 @@ Group: System/Libraries
 %_kde_libdir/libepub.so.%{libepub_major}*
 
 #--------------------------------------------------------------------
+%package devel
+Summary: Devel stuff for %name
+Group: Development/KDE and Qt
+Requires:  %libepub = %version-%release
 
+%description  devel
+This package contains header files needed if you wish to build applications
+based on %name
+
+%files devel
+%defattr(-,root,root)
+%{_includedir}/*.h
+%{_libdir}/libepub.so
+
+#-----------------------------------------------------------------------------
 
 %prep
 %setup -q 
