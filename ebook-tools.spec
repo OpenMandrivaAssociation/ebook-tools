@@ -9,6 +9,10 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source0:        %{name}-%{version}.tar.gz
 Patch0:         ebook-tools-0.1.0-fix-lib.patch
 
+BuildRequires:  kde4-macros
+BuildRequires:  libxml2-devel
+BuildRequires:  libzip-devel
+
 %description
 Tools for accessing and converting various ebook file formats
 
