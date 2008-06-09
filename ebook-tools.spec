@@ -33,8 +33,12 @@ Group: System/Libraries
 %description -n %libepub
 %name library.
 
+%if %mdkversion < 200900
 %post -n %libepub -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
 %postun -n %libepub -p /sbin/ldconfig
+%endif
 
 %files -n %libepub
 %defattr(-,root,root)
