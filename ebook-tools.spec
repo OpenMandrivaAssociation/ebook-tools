@@ -1,13 +1,13 @@
 Name:           ebook-tools
 Summary:        Tools for accessing and converting various ebook file formats
-Version:        0.1.0
-Release:        %mkrel 3
+Version:        0.1.1
+Release:        %mkrel 1
 Url:            http://sourceforge.net/projects/ebook-tools
 License:        MIT
 Group:          Publishing
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source0:        %{name}-%{version}.tar.gz
-Patch0:         ebook-tools-0.1.0-fix-lib.patch
+Patch0:         ebook-tools-0.1.1-fix-lib.patch
 BuildRequires:  kde4-macros
 BuildRequires:  libxml2-devel
 BuildRequires:  libzip-devel
@@ -62,7 +62,7 @@ based on %name
 
 %prep
 %setup -q 
-%patch0 -p0
+%patch0 -p1 -b .fix-lib
 
 %build
 %cmake_kde4
