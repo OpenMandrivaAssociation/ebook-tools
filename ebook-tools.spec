@@ -1,7 +1,7 @@
 Name:           ebook-tools
 Summary:        Tools for accessing and converting various ebook file formats
 Version:        0.1.1
-Release:        %mkrel 1
+Release:        %mkrel 2
 Url:            http://sourceforge.net/projects/ebook-tools
 License:        MIT
 Group:          Publishing
