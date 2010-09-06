@@ -1,7 +1,7 @@
 Name:           ebook-tools
 Summary:        Tools for accessing and converting various ebook file formats
 Version:        0.1.1
-Release:        %mkrel 3
+Release:        %mkrel 4
 Url:            http://sourceforge.net/projects/ebook-tools
 License:        MIT
 Group:          Publishing
@@ -11,6 +11,7 @@ Patch0:         ebook-tools-0.1.1-fix-lib.patch
 BuildRequires:  kde4-macros
 BuildRequires:  libxml2-devel
 BuildRequires:  libzip-devel
+Suggests:       clit
 
 %description
 Tools for accessing and converting various ebook file formats
@@ -31,13 +32,6 @@ Group: System/Libraries
 
 %description -n %libepub
 %name library.
-
-%if %mdkversion < 200900
-%post -n %libepub -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libepub -p /sbin/ldconfig
-%endif
 
 %files -n %libepub
 %defattr(-,root,root)
