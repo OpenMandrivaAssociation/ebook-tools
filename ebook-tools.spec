@@ -8,6 +8,7 @@ Group:          Publishing
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source0:        %{name}-%{version}.tar.gz
 Patch0:         ebook-tools-0.1.1-fix-lib.patch
+Patch1:		ebook-tools-0.1.1-libzip2.patch
 BuildRequires:  kde4-macros
 BuildRequires:  libxml2-devel
 BuildRequires:  libzip-devel
@@ -57,6 +58,7 @@ based on %name
 %prep
 %setup -q 
 %patch0 -p1 -b .fix-lib
+%patch1 -p0 -b .zip
 
 %build
 %cmake_kde4
