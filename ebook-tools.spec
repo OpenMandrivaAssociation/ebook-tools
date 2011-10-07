@@ -1,14 +1,13 @@
 Name:           ebook-tools
 Summary:        Tools for accessing and converting various ebook file formats
-Version:        0.1.1
-Release:        %mkrel 7
+Version:        0.2.1
+Release:        %mkrel 1
 Url:            http://sourceforge.net/projects/ebook-tools
 License:        MIT
 Group:          Publishing
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Source0:        %{name}-%{version}.tar.gz
-Patch0:         ebook-tools-0.1.1-fix-lib.patch
-Patch1:		ebook-tools-0.1.1-libzip2.patch
+Patch0:         ebook-tools-0.2.1-fix-lib.patch
 BuildRequires:  kde4-macros
 BuildRequires:  libxml2-devel
 BuildRequires:  libzip-devel
@@ -27,26 +26,26 @@ Tools for accessing and converting various ebook file formats
 %define libepub_major 0
 %define libepub %mklibname epub %{libepub_major}
 
-%package -n %libepub
+%package -n %{libepub}
 Summary: KDE 4 library
 Group: System/Libraries
 
-%description -n %libepub
-%name library.
+%description -n %{libepub}
+%{name} library.
 
-%files -n %libepub
+%files -n %{libepub}
 %defattr(-,root,root)
-%_kde_libdir/libepub.so.%{libepub_major}*
+%{_kde_libdir}/libepub.so.%{libepub_major}*
 
 #--------------------------------------------------------------------
 %package devel
-Summary: Devel stuff for %name
+Summary: Devel stuff for %{name}
 Group: Development/KDE and Qt
-Requires:  %libepub = %version-%release
+Requires: %{libepub} = %{version}-%{release}
 
 %description  devel
 This package contains header files needed if you wish to build applications
-based on %name
+based on %{name}
 
 %files devel
 %defattr(-,root,root)
@@ -56,17 +55,15 @@ based on %name
 #-----------------------------------------------------------------------------
 
 %prep
-%setup -q 
+%setup -q
 %patch0 -p1 -b .fix-lib
-%patch1 -p0 -b .zip
 
 %build
 %cmake_kde4
 %make
 
 %install
-cd build
-make DESTDIR=%buildroot install
+%makeinstall_std -C build
 
 %clean
 %{__rm} -rf "%{buildroot}"
