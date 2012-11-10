@@ -1,0 +1,25 @@
+--- ebook-tools-0.2.1/CMakeLists.txt.lib	2011-08-15 10:31:46.000000000 +0200
++++ ebook-tools-0.2.1/CMakeLists.txt	2011-08-15 10:32:31.000000000 +0200
+@@ -7,6 +7,13 @@
+ set(EXECUTABLE_OUTPUT_PATH ${EBOOK-TOOLS_BINARY_DIR}/bin)
+ 
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
++# Suffix for x86/x86_64:
++SET(LIB_SUFFIX "" CACHE STRING "Define suffix of directory name (32/64)" )
++SET(LIB_INSTALL_DIR
++	"lib${LIB_SUFFIX}"
++	CACHE PATH "The subdirectory relative to the install prefix where libraries will be installed (default is lib${LIB_SUFFIX})."
++	FORCE
++	)
+ 
+ find_package(LibXml2 REQUIRED)
+ find_package(LibZip REQUIRED)
+--- ebook-tools-0.2.1/src/libepub/CMakeLists.txt.lib	2011-08-15 10:32:39.000000000 +0200
++++ ebook-tools-0.2.1/src/libepub/CMakeLists.txt	2011-08-15 10:33:01.000000000 +0200
+@@ -4,5 +4,5 @@
+ 
+ set_target_properties (epub PROPERTIES VERSION 0.2.1 SOVERSION 0)
+ 
+-install ( TARGETS epub RUNTIME DESTINATION bin LIBRARY DESTINATION lib ARCHIVE DESTINATION lib )
++install ( TARGETS epub RUNTIME DESTINATION bin LIBRARY DESTINATION ${LIB_INSTALL_DIR} ARCHIVE DESTINATION ${LIB_INSTALL_DIR} )
+ install ( FILES epub.h epub_shared.h epub_version.h DESTINATION include )
