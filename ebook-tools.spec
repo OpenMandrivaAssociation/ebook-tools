@@ -2,21 +2,21 @@
 %define libepub %mklibname epub %{major}
 %define devepub %mklibname epub -d
 
-Summary:        Tools for accessing and converting various ebook file formats
-Name:           ebook-tools
-Version:        0.2.1
-Release:        2
-License:        MIT
-Group:          Publishing
-Url:            http://sourceforge.net/projects/ebook-tools
-Source0:        %{name}-%{version}.tar.gz
-Patch0:         ebook-tools-0.2.1-fix-lib.patch
+Summary:	Tools for accessing and converting various ebook file formats
+Name:		ebook-tools
+Version:	0.2.1
+Release:	2
+License:	MIT
+Group:		Publishing
+Url:		http://sourceforge.net/projects/ebook-tools
+Source0:	%{name}-%{version}.tar.gz
+Patch0:		ebook-tools-0.2.1-fix-lib.patch
 Patch1:		ebook-tools-0.1.1-libzip2.patch
 
-BuildRequires:  kde4-macros
-BuildRequires:  bzip-devel
-BuildRequires:  pkgconfig(libxml-2.0)
-Suggests:       clit
+BuildRequires:	kde4-macros
+BuildRequires:	bzip-devel
+BuildRequires:	pkgconfig(libxml-2.0)
+Suggests:	clit
 
 %description
 Tools for accessing and converting various ebook file formats
