@@ -1,5 +1,5 @@
---- cmake/FindLibZip.cmake.orig	2011-05-03 15:08:12.000000000 +0200
-+++ cmake/FindLibZip.cmake	2011-05-03 15:13:51.000000000 +0200
+--- ./cmake/FindLibZip.cmake.orig	2011-05-03 15:08:12.000000000 +0200
++++ ./cmake/FindLibZip.cmake	2011-05-03 15:13:51.000000000 +0200
 @@ -15,15 +15,10 @@
    set(LIBZIP_FOUND TRUE)
  else (LIBZIP_LIBRARY AND LIBZIP_INCLUDE_DIR)
