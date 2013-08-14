@@ -1,16 +1,15 @@
-%define major	0
+%define major   0
 %define libepub %mklibname epub %{major}
 %define devepub %mklibname epub -d
 
 Summary:	Tools for accessing and converting various ebook file formats
 Name:		ebook-tools
-Version:	0.2.1
-Release:	2
+Version:	0.2.2
+Release:	1
 License:	MIT
 Group:		Publishing
 Url:		http://sourceforge.net/projects/ebook-tools
 Source0:	%{name}-%{version}.tar.gz
-Patch0:		ebook-tools-0.2.1-fix-lib.patch
 Patch1:		ebook-tools-0.1.1-libzip2.patch
 
 BuildRequires:	kde4-macros
@@ -22,7 +21,7 @@ Suggests:	clit
 Tools for accessing and converting various ebook file formats
 
 %package -n %{libepub}
-Summary:	KDE 4 library
+Summary:	KDE shared library
 Group:		System/Libraries
 
 %description -n %{libepub}
@@ -35,12 +34,12 @@ Requires:	%{libepub} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Obsoletes:	ebook-tools-devel < 0.2.1-2
 
-%description  -n %{devepub}
+%description -n %{devepub}
 This package contains header files needed if you wish to build applications
 based on %{name}
 
 %prep
-%setup -q 
+%setup -q
 %apply_patches
 
 %build
