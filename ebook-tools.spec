@@ -13,7 +13,7 @@ Source0:	%{name}-%{version}.tar.gz
 Patch1:		ebook-tools-0.1.1-libzip2.patch
 
 BuildRequires:	kde4-macros
-BuildRequires:	pkgconfig(libzip)
+BuildRequires:	libzip-devel
 BuildRequires:	pkgconfig(libxml-2.0)
 Suggests:	clit
 
