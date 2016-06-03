@@ -5,7 +5,7 @@
 Summary:	Tools for accessing and converting various ebook file formats
 Name:		ebook-tools
 Version:	0.2.2
-Release:	11
+Release:	12
 License:	MIT
 Group:		Publishing
 Url:		http://sourceforge.net/projects/ebook-tools
