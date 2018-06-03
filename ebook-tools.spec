@@ -15,6 +15,7 @@ Patch1:		ebook-tools-0.1.1-libzip2.patch
 BuildRequires:	kde4-macros
 BuildRequires:	libzip-devel
 BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(zlib)
 Suggests:	clit
 
 %description
