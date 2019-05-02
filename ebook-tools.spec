@@ -5,14 +5,18 @@
 Summary:	Tools for accessing and converting various ebook file formats
 Name:		ebook-tools
 Version:	0.2.2
-Release:	15
+Release:	16
 License:	MIT
 Group:		Publishing
 Url:		http://sourceforge.net/projects/ebook-tools
 Source0:	%{name}-%{version}.tar.gz
+# https://bugs.kde.org/show_bug.cgi?id=406116
+# https://sourceforge.net/p/ebook-tools/bugs/8/
+# https://bugsfiles.kde.org/attachment.cgi?id=119785
+Patch0:		ebook-tools-fix-baloo-crash.patch
 Patch1:		ebook-tools-0.1.1-libzip2.patch
 
-BuildRequires:	kde4-macros
+BuildRequires:	cmake(ECM)
 BuildRequires:	libzip-devel
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(zlib)
@@ -44,20 +48,19 @@ based on %{name}
 %apply_patches
 
 %build
-%cmake_kde4
-%make
+%cmake_kde5
+%ninja_build
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
 %files
-%{_kde_bindir}/einfo
-%{_kde_bindir}/lit2epub
+%{_bindir}/einfo
+%{_bindir}/lit2epub
 
 %files -n %{libepub}
-%{_kde_libdir}/libepub.so.%{major}*
+%{_libdir}/libepub.so.%{major}*
 
 %files -n %{devepub}
-%{_kde_includedir}/*.h
-%{_kde_libdir}/libepub.so
-
+%{_includedir}/*.h
+%{_libdir}/libepub.so
