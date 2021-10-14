@@ -5,7 +5,7 @@
 Summary:	Tools for accessing and converting various ebook file formats
 Name:		ebook-tools
 Version:	0.2.2
-Release:	16
+Release:	17
 License:	MIT
 Group:		Publishing
 Url:		http://sourceforge.net/projects/ebook-tools
@@ -17,7 +17,7 @@ Patch0:		ebook-tools-fix-baloo-crash.patch
 Patch1:		ebook-tools-0.1.1-libzip2.patch
 
 BuildRequires:	cmake(ECM)
-BuildRequires:	libzip-devel
+BuildRequires:	pkgconfig(libzip)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(zlib)
 Suggests:	clit
@@ -44,8 +44,7 @@ This package contains header files needed if you wish to build applications
 based on %{name}
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
 %cmake_kde5
