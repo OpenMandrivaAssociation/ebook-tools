@@ -8,7 +8,7 @@ Version:	0.2.2
 Release:	19
 License:	MIT
 Group:		Publishing
-Url:		http://sourceforge.net/projects/ebook-tools
+Url:		https://sourceforge.net/projects/ebook-tools
 Source0:	%{name}-%{version}.tar.gz
 # https://bugs.kde.org/show_bug.cgi?id=406116
 # https://sourceforge.net/p/ebook-tools/bugs/8/
