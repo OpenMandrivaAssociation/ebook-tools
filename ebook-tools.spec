@@ -16,7 +16,7 @@ Source0:	%{name}-%{version}.tar.gz
 Patch0:		ebook-tools-fix-baloo-crash.patch
 Patch1:		ebook-tools-0.1.1-libzip2.patch
 
-BuildRequires:  cmake ninja
+BuildRequires:  cmake ninja make
 BuildRequires:	cmake(ECM)
 BuildRequires:	pkgconfig(libzip)
 BuildRequires:	pkgconfig(libxml-2.0)
