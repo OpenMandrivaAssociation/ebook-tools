@@ -47,7 +47,7 @@ based on %{name}
 %autosetup -p1
 
 %build
-%cmake_kde5
+%cmake
 %ninja_build
 
 %install
